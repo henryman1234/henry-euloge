@@ -8,11 +8,10 @@
         display: flex;
         align-items: center;
         overflow: hidden;
-        min-height: 100vh;
+        height: 100vh;
         justify-content: space-between;
         padding-top: 30px;
         position: relative;
-        // background-color: red;
 
         .slidingTextContainer {
             position: absolute;
@@ -20,7 +19,7 @@
             color: #ffffff09;
             white-space: nowrap;
             font-weight: bold;
-            width: 50%;
+            width: 100%;
             bottom: 80px;
         }
 

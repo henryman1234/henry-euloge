@@ -45,20 +45,20 @@ function Homepage () {
     return (
         <div className="homepage">
 
-            <div className="hero container">
+            <div className="hero">
 
                 <motion.div className="slidingTextContainer" variants={sliderVariant} initial="initial" animate="animate">
                     Henry Euloge
                 </motion.div>
 
                 <motion.div className="slidingTextContainer2" variants={sliderVariant2} initial="initial" animate="animate">
-                    Developpeur web
+                    Developpeur JavaScript
                 </motion.div>
 
                 <motion.div className="hero-body" variants={SliderBottom(0.2)} initial="hidden" whileInView="visible">
                     <div className="wrapper">  
                         <div className="hero-hello">
-                            Bonjour, je suis
+                            Bonjour,je suis
                         </div>
                         <div className="hero-name">Henry Euloge</div>
                         <div className="hero-job">Developpeur web FullStack JavaScript</div>
@@ -70,7 +70,7 @@ function Homepage () {
 
             </div>
 
-            <motion.div className="section-first" variants={SlideUp(0.4)} initial="hidden" animate="visible">
+            <motion.div className="section-first" variants={SliderBottom(0.4)} initial="hidden" animate="visible">
 
                <div className="section-top-title">Mes compétences</div>
                <div className="section-title">Services</div>

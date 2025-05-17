@@ -1,0 +1,116 @@
+@use "../../responsive.scss";
+
+.navbar {
+    display: flex;
+    height: 100px;
+    justify-content: space-between !important;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+
+    // @include responsive.large {
+    //     padding-right: calc(50vw - 570px);
+    //     padding-left: calc(50vw - 570px);
+    // }
+
+    .left {
+        display: flex;
+        flex: 3;
+        height: 100%;
+        align-items: center;
+
+        img {
+            height: 40px;
+            width: auto;
+
+            @include responsive.sm {
+                display: none;
+            }
+        }
+    }
+
+
+
+
+    .right {
+        flex: 2;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+
+        ul {
+            display: flex;
+            align-items: center;
+
+            li {
+                list-style: none;
+                margin-left: 20px;
+                margin-right: 20px;
+                color: white;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    display: block;
+                    padding: 15px 0;
+                    font-weight: 500;
+                    position: relative;
+                    // color: #fff;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    background: none;
+                    line-height: 30px;
+                    transition: 0.32s ease all;
+
+                    &:hover {
+                        color: #cd4728;
+
+                        &::before {
+                            opacity: 1;
+                            width: 100%;
+                            bottom: 0;
+                        }
+                        
+                    }
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        opacity: 1;
+                        bottom: 0;
+                        height: 2px;
+                        color: #cd4728;
+                        border-bottom: 2px solid;
+                        width: 0;
+                        left: 0;
+                        transition: 0.32s ease all;
+                    }
+
+                }
+
+                .contact-link {
+                    border-radius: 2px;
+                    display: inline-block;
+                    text-transform: uppercase;
+                    padding: 8px 30px;
+                    white-space: nowrap;
+                    border: 2px solid #cd4728;
+                    font-size: 14px;
+                    background: transparent;
+
+                    &:hover {
+                        background-color: #cd4728;
+                        color : #172531;
+
+                    }
+                }
+            }
+
+        }
+    }
+}

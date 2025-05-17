@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Imports fonts
+@font-face {
+    src: url(../public/fonts/CentraNo2-Book.ttf);
+    font-weight: 400;
+    font-family: Centra;
+}
+
+@font-face {
+    src: url(../public/fonts/CentraNo2-Medium.ttf);
+    font-weight: 500;
+    font-family: Centra;
+}
+
+section {
+    display: block;
+}
+
+@font-face {
+    src: url(../public/fonts/CentraNo2-Bold.ttf);
+    font-weight: 600;
+    font-family: Centra;
+}
+
+@font-face {
+    src: url(../public/fonts/AnacondaWildstyle_PERSONAL_USE_ONLY.otf);
+    font-weight: 600;
+    font-family: Anaconda;
+}
+
+@font-face {
+    src: url(../public/fonts/PlayfairDisplay-Black.ttf);
+    font-family: Playfair;
+    font-weight: 600;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Centra;
+    background-color: #172531;
+}
+
+
+
+@media screen and (min-width: 1181px) {
+    .hero {
+        padding-left:calc(50vw - 570px);
+        padding-right: calc(50vw - 570px);
+    }
+}
+
+
+

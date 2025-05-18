@@ -11,6 +11,9 @@ import { SlideUp, SliderBottom } from "../../utils/animation"
 import maq3 from "../../../public/images/maq3.jpg"
 import maq4 from "../../../public/images/maq4.jpg"
 import maq5 from "../../../public/images/maq5.jpg"
+import github from "../../../public/images/github.png"
+import phone from "../../../public/images/phone.png"
+import whatsapp from "../../../public/images/whatsapp.png"
 
 
 const sliderVariant = {
@@ -189,7 +192,34 @@ function Homepage () {
 
 
             <div className="section-three">
-                Bonjour les gens
+                
+                <div className="section-top-title">réseaux sociaux</div>
+                <div className="section-title">Me retrouver</div>
+
+                <div className="social-links">
+
+                    <a href="https://wa.me/237658055913" target="_blank">
+                        <strong>Whatsapp</strong>
+                        <span>(+237) 658055913</span>
+                        <img src={whatsapp} alt="icone de github" />
+                    </a>
+
+                    <a href="https://github.com/henryman1234" target="_blank">
+                        <strong>Github</strong>
+                        <span>github.com/henry</span>
+                        <img src={github} alt="icone de github" />
+                    </a>
+
+                     <a href="" target="_blank">
+                        <strong>Téléphone</strong>
+                        <span>(+237) 658055913</span>
+                        <img src={phone} alt="icone de github" />
+                    </a>
+
+
+
+
+                </div>
             </div>
 
 

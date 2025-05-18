@@ -14,7 +14,10 @@ import maq5 from "../../../public/images/maq5.jpg"
 import github from "../../../public/images/github.png"
 import phone from "../../../public/images/phone.png"
 import whatsapp from "../../../public/images/whatsapp.png"
-
+import {Swiper, SwiperSlide} from "swiper/react"
+import "swiper/css"
+import "swiper/css/scrollbar"
+import {Scrollbar} from "swiper/modules"
 
 const sliderVariant = {
     initial: {
@@ -120,70 +123,70 @@ function Homepage () {
 
                 <div className="projects">
 
+                    <Swiper className="projects-container mySwiper" modules={[Scrollbar]} scrollbar={{hide: false}} spaceBetween={40} slidesPerView={1}>
 
-                            <div className="projects-container">
+                        <SwiperSlide className="project" initial>
 
-                                <div className="project">
-
-                                    <a href="#" className="project-image">
-                                        <img src={maq3} alt="image du projet" />
-                                    </a>
-                                    <div className="project-body">
-                                        <div className="project-tags">React, CSS</div>
-                                        <div className="project-name">Stackr</div>
-                                        <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                                        <a href="#" className="project-action">
-                                            En savoir plus
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="project">
-
-                                    <a href="#" className="project-image">
-                                        <img src={maq4} alt="image du projet" />
-                                    </a>
-                                    <div className="project-body">
-                                        <div className="project-tags">React, CSS</div>
-                                        <div className="project-name">Stackr</div>
-                                        <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                                        <a href="#" className="project-action">
-                                            En savoir plus
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="project">
-
-                                    <a href="#" className="project-image">
-                                        <img src={maq5} alt="image du projet" />
-                                    </a>
-                                    <div className="project-body">
-                                        <div className="project-tags">React, CSS</div>
-                                        <div className="project-name">Stackr</div>
-                                        <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                                        <a href="#" className="project-action">
-                                            En savoir plus
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="project">
-
-                                    <a href="#" className="project-image">
-                                        <img src={maq5} alt="image du projet" />
-                                    </a>
-                                    <div className="project-body">
-                                        <div className="project-tags">React, CSS</div>
-                                        <div className="project-name">Stackr</div>
-                                        <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                                        <a href="#" className="project-action">
-                                            En savoir plus
-                                        </a>
-                                    </div>
-                                </div>
-
+                            <a href="#" className="project-image">
+                                <img src={maq3} alt="image du projet" />
+                            </a>
+                            <div className="project-body">
+                                <div className="project-tags">React, CSS</div>
+                                <div className="project-name">Stackr</div>
+                                <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
+                                <a href="#" className="project-action">
+                                    En savoir plus
+                                </a>
                             </div>
+                        </SwiperSlide>
+
+                        <SwiperSlide className="project">
+
+                            <a href="#" className="project-image">
+                                <img src={maq4} alt="image du projet" />
+                            </a>
+                            <div className="project-body">
+                                <div className="project-tags">React, CSS</div>
+                                <div className="project-name">Stackr</div>
+                                <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
+                                <a href="#" className="project-action">
+                                    En savoir plus
+                                </a>
+                            </div>
+                        </SwiperSlide>
+
+                        <SwiperSlide className="project">
+
+                            <a href="#" className="project-image">
+                                <img src={maq5} alt="image du projet" />
+                            </a>
+                            <div className="project-body">
+                                <div className="project-tags">React, CSS</div>
+                                <div className="project-name">Stackr</div>
+                                <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
+                                <a href="#" className="project-action">
+                                    En savoir plus
+                                </a>
+                            </div>
+                        </SwiperSlide>
+
+                        <SwiperSlide className="project">
+
+                            <a href="#" className="project-image">
+                                <img src={maq4} alt="image du projet" />
+                            </a>
+                            <div className="project-body">
+                                <div className="project-tags">React, CSS</div>
+                                <div className="project-name">Stackr</div>
+                                <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
+                                <a href="#" className="project-action">
+                                    En savoir plus
+                                </a>
+                            </div>
+                        </SwiperSlide>
+
+
+                    </Swiper>
 
 
                 </div>

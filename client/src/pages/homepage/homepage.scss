@@ -243,18 +243,14 @@
             height: 100%;
 
             .projects-container {
-
                padding-bottom: 40px;
                padding-top: 40px;
-            //    justify-items: center;
                overflow: visible;
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 350px));
-               gap: 20px;
-               justify-content: center;
-            //    background-color: red;
-            //    max-width: 100%;
-            width: 100%;
+                gap: 20px !important;
+               justify-content: start;
+                width: 100%;
 
 
 
@@ -463,3 +459,4 @@
         }
     }
 }
+

@@ -14,6 +14,7 @@ import maq5 from "../../../public/images/maq5.jpg"
 import github from "../../../public/images/github.png"
 import phone from "../../../public/images/phone.png"
 import whatsapp from "../../../public/images/whatsapp.png"
+
 import {Swiper, SwiperSlide} from "swiper/react"
 import "swiper/css"
 import "swiper/css/scrollbar"
@@ -184,15 +185,9 @@ function Homepage () {
                                 </a>
                             </div>
                         </SwiperSlide>
-
-
                     </Swiper>
-
-
                 </div>
-
             </div>
-
 
             <div className="section-three">
                 
@@ -213,18 +208,19 @@ function Homepage () {
                         <img src={github} alt="icone de github" />
                     </a>
 
-                     <a href="" target="_blank">
+                        <a href="" target="_blank">
                         <strong>Téléphone</strong>
                         <span>(+237) 658055913</span>
                         <img src={phone} alt="icone de github" />
                     </a>
 
-
-
-
                 </div>
+
             </div>
 
+            <div className="section-footer">
+                Intégration et developpement par <a href="/">Henry</a>
+            </div>
 
         </div>
     )

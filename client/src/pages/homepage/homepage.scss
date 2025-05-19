@@ -376,8 +376,9 @@
         padding-right: 20px;
         padding-bottom: 120px;
         padding-top: 120px;
-        height: 100vh;
+        height: auto;
         background-color: #1b3347;
+        width: 100%;
 
         @include responsive.large {
             padding-left: calc(50vw - 570px);
@@ -458,5 +459,20 @@
             }
         }
     }
+
+    .section-footer {
+        background-color: #21425c;
+        text-align: center;
+        color: #ffffff90;
+        height: auto;
+        font-weight: 500;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+
+
 }
 

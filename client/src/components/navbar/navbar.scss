@@ -9,10 +9,10 @@
     padding-right: 20px;
     align-items: center;
 
-    // @include responsive.large {
-    //     padding-right: calc(50vw - 570px);
-    //     padding-left: calc(50vw - 570px);
-    // }
+    @include responsive.large {
+        padding-right: calc(50vw - 570px);
+        padding-left: calc(50vw - 570px);
+    }
 
     .left {
         display: flex;

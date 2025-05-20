@@ -3,16 +3,16 @@
 .navbar {
     display: flex;
     height: 100px;
-    justify-content: space-between !important;
+    justify-items: space-between !important;
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
     align-items: center;
 
-    @include responsive.large {
-        padding-right: calc(50vw - 570px);
-        padding-left: calc(50vw - 570px);
-    }
+    // @include responsive.large {
+    //    padding-left: calc(50vw - 570px);
+    //    padding-right: calc(50vw - 570px);
+    // }
 
     .left {
         display: flex;

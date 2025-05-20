@@ -59,7 +59,7 @@ body {
 
 
 @media screen and (min-width: 1181px) {
-    .hero, .footer, .navbar {
+    .hero {
         padding-left:calc(50vw - 570px);
         padding-right: calc(50vw - 570px);
     }

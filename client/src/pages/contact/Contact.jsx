@@ -3,6 +3,8 @@ import "./contact.scss"
 import whatsapp from "../../../public/images/whatsapp.png"
 import phone from "../../../public/images/phone.png"
 import github from "../../../public/images/github.png"
+import {motion} from "framer-motion"
+import { SlideUp, SliderLeft, SliderRight } from "../../utils/animation";
 
 function Contact () {
     return (
@@ -13,15 +15,16 @@ function Contact () {
                 <div className="page-header">
                 </div>
 
-                <div className="section">
+                <motion.div className="section" variants={SlideUp(0.2)} initial="hidden" whileInView="visible">
 
                     <div className="contact-card">
 
-                        <div className="section-top-title">obtenir un devis</div>
-                        <div className="section-title">Me contacter</div>
-                        <p>Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus proche du devis final.</p>
+                        <motion.div variants={SlideUp(0.3)} initial="hidden" whileInView="visible" className="section-top-title">obtenir un devis</motion.div>
+                        <motion.div variants={SlideUp(0.3)} initial="hidden" whileInView="visible" className="section-title">Me contacter</motion.div>
 
-                        <form action="/contact" className="contact-form">
+                        <motion.p variants={SlideUp(0.5)} initial="hidden"whileInView="visible"   >Merci de donner un maximum de détail sur le projet afin que je puisse évaluer correctement la charge de travail que représente votre projet. Cela permettra aussi d'avoir un premier chiffrage au plus proche du devis final.</motion.p>
+
+                        <motion.form variants={SlideUp(0.6)} initial="hidden" whileInView="visible" action="/contact" className="contact-form">
 
                             <div className="first-div" >
                                 <input type="text" name="name" placeholder="Nom & prénom" required />
@@ -33,20 +36,21 @@ function Contact () {
                             <div className="second-div">
                                 <button type="submit" className="btn">Obtenir un devis</button>
                             </div>
-                        </form>
+                        </motion.form>
 
 
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="section-faq">
 
                     <div className="faq-side">
-                        <div className="section-top-title">FAQ</div>
-                        <div className="section-title">Les questions fréquentes</div>
+                        <motion.div variants={SliderLeft(0.3)} whileInView="visible"  initial="hidden"  className="section-top-title">FAQ</motion.div>
+                        <motion.div variants={SliderLeft(0.5)} whileInView="visible"  initial="hidden"    className="section-title">Les Questions fréquentes</motion.div>
                     </div>
 
-                    <div className="faq-body">
+                    <motion.div className="faq-body" variants={SlideUp(0.2)} initial="hidden" whileInView="visible">
+
                         <div className="faq-question">
                             <h3>Quelles sont vos disponibilités ?</h3>
                             <p>Je suis actuellement disponible</p>
@@ -67,15 +71,16 @@ function Contact () {
                             <p>Je ne suis malheureusement pas en capacité d'effectuer le design d'une application aussi il sera nécessaire de fournir le design si la mission le nécessite. </p>
                         </div>
 
-                    </div>
+                    </motion.div>
                 </div>
 
                 <div className="section-social">
 
-                    <div className="section-top-title">réseaux sociaux</div>
-                    <div className="section-title">Me retrouver</div>
+                    <motion.div variants={SliderLeft(0.1)}  initial="hidden"  whileInView="visible" className="section-top-title">réseaux sociaux</motion.div>
+                    
+                    <motion.div variants={SliderLeft(0.3)} initial="hidden" whileInView="visible" className="section-title">Me retrouver</motion.div>
     
-                    <div className="social-links">
+                    <motion.div className="social-links" variants={SliderRight(0.5)} initial="hidden" whileInView="visible">
     
                         <a href="https://wa.me/237658055913" target="_blank">
                             <strong>Whatsapp</strong>
@@ -95,7 +100,7 @@ function Contact () {
                             <img src={phone} alt="icone de github" />
                         </a>
     
-                    </div>
+                    </motion.div>
 
                 </div>
 

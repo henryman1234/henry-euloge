@@ -7,7 +7,7 @@ import vue from "../../../public/images/vue.png"
 import laravel from "../../../public/images/laravel.png"
 import symfony from "../../../public/images/symfony.png"
 import wordpress from "../../../public/images/wordpress.png"
-import { SlideUp, SliderBottom } from "../../utils/animation"
+import { SlideUp, SliderBottom, SliderLeft, SliderRight } from "../../utils/animation"
 import maq3 from "../../../public/images/maq3.jpg"
 import maq4 from "../../../public/images/maq4.jpg"
 import maq5 from "../../../public/images/maq5.jpg"
@@ -71,18 +71,19 @@ function Homepage () {
                         <div className="hero-job">Developpeur web FullStack JavaScript</div>
                         </div>
                 </motion.div>
-                <motion.div className="hero-image" variants={SliderBottom(0.3)} initial="hidden" animate="visible">
+                <motion.div className="hero-image" variants={SliderBottom(0.3)} initial="hidden" whileInView="visible">
                     <img src={image} alt="Ma photo" />
                 </motion.div>
 
             </div>
 
-            <motion.div className="section-first" variants={SliderBottom(0.4)} initial="hidden" animate="visible">
+            <div className="section-first">
 
-               <div className="section-top-title">Mes compétences</div>
-               <div className="section-title">Services</div>
+               <motion.div variants={SliderLeft(0.1)}  initial="hidden"  whileInView="visible" className="section-top-title">Mes compétences</motion.div>
 
-               <div className="services">
+               <motion.div variants={SliderLeft(0.3)} initial="hidden" whileInView="visible" className="section-title">Services</motion.div>
+
+               <motion.div className="services" variants={SliderBottom(0.002)} initial="hidden" whileInView="visible">
 
                 <div className="service">
 
@@ -113,14 +114,15 @@ function Homepage () {
                     Je maitrise les outils ACF, Bedrock, Timber, Themosis.</p>
                 </div>
 
-               </div>
+               </motion.div>
 
-            </motion.div>
+            </div>
 
             <div className="section-two">
                 
-                <div className="section-top-title">Mes clients</div>
-                <div className="section-title">Projets</div>
+                <motion.div variants={SliderLeft(0.1)}  initial="hidden"  className="section-top-title" whileInView="visible">Mes clients</motion.div>
+
+                <motion.div variants={SliderLeft(0.3)} whileInView="visible" initial="hidden"  className="section-title">Projets</motion.div>
 
                 <div className="projects">
 
@@ -191,10 +193,10 @@ function Homepage () {
 
             <div className="section-three">
                 
-                <div className="section-top-title">réseaux sociaux</div>
-                <div className="section-title">Me retrouver</div>
+                <motion.div variants={SliderLeft(0.3)} whileInView="visible"  initial="hidden"  className="section-top-title">réseaux sociaux</motion.div>
+                <motion.div variants={SliderLeft(0.5)} whileInView="visible"  initial="hidden"    className="section-title">Me retrouver</motion.div>
 
-                <div className="social-links">
+                <motion.div className="social-links" variants={SliderRight(0.3)} initial="hidden" whileInView="visible">
 
                     <a href="https://wa.me/237658055913" target="_blank">
                         <strong>Whatsapp</strong>
@@ -214,7 +216,7 @@ function Homepage () {
                         <img src={phone} alt="icone de github" />
                     </a>
 
-                </div>
+                </motion.div>
 
             </div>
 

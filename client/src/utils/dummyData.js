@@ -12,41 +12,41 @@ export const Projects = [
         name: "Stackr",
         description: "Création d'une librairie de composants et refonte du dashboard Strackr",
         stacks: ["react", "css"],
-        image: "../../public/images/maq6.jpg"
+        image: "/images/maq6.jpg"
     },
     {
         id: 2,
         name: "Stackr",
         description: "Création d'une librairie de composants et refonte du dashboard Strackr",
         stacks: ["react", "css"],
-        image: "../../public/images/maq7.jpg"
+        image: "/images/maq7.jpg"
     },
     {
         id: 3,
         name: "Stackr",
         description: "Création d'une librairie de composants et refonte du dashboard Strackr",
         stacks: ["react", "css"],
-        image: "../../public/images/maq4.jpg"
+        image: "/images/maq4.jpg"
     },
     {
         id: 4,
         name: "Stackr",
         description: "Création d'une librairie de composants et refonte du dashboard Strackr",
         stacks: ["react", "css"],
-        image: "../../public/images/maq4.jpg"
+        image: "/images/maq4.jpg"
     },
     {
         id: 5,
         name: "Stackr",
         description: "Création d'une librairie de composants et refonte du dashboard Strackr",
         stacks: ["react", "css"],
-        image: "../../public/images/maq3.jpg"
+        image: "/images/maq3.jpg"
     },
     {
         id: 6,
         name: "Stackr",
         description: "Création d'une librairie de composants et refonte du dashboard Strackr",
         stacks: ["react", "css"],
-        image: "../../public/images/maq5.jpg"
+        image: "/images/maq5.jpg"
     },
 ]

@@ -4,6 +4,7 @@ import Layout from "./pages/layout/Layout"
 import Homepage from "./pages/homepage/Homepage"
 import Contact from "./pages/contact/Contact"
 import Projets from "./pages/projets/Projets"
+import SingleProject from "./pages/singleProject/SingleProject"
 
 function App () {
 
@@ -14,7 +15,7 @@ function App () {
       children: [
         {
           path: "/",
-          element: <Homepage/>
+          element: <Homepage/> 
         },
         {
           path: "/contact",
@@ -23,6 +24,10 @@ function App () {
         {
           path: "/projets",
           element: <Projets/>
+        },
+        {
+          path: "/projets/:id",
+          element: <SingleProject/>
         }
       ]
     }

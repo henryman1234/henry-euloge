@@ -8,9 +8,6 @@ import laravel from "../../../public/images/laravel.png"
 import symfony from "../../../public/images/symfony.png"
 import wordpress from "../../../public/images/wordpress.png"
 import { SlideUp, SliderBottom, SliderLeft, SliderRight } from "../../utils/animation"
-import maq3 from "../../../public/images/maq3.jpg"
-import maq4 from "../../../public/images/maq4.jpg"
-import maq5 from "../../../public/images/maq5.jpg"
 import github from "../../../public/images/github.png"
 import phone from "../../../public/images/phone.png"
 import whatsapp from "../../../public/images/whatsapp.png"
@@ -19,6 +16,8 @@ import {Swiper, SwiperSlide} from "swiper/react"
 import "swiper/css"
 import "swiper/css/scrollbar"
 import {Scrollbar} from "swiper/modules"
+import { Projects } from "../../utils/dummyData"
+import { Link } from "react-router-dom"
 
 const sliderVariant = {
     initial: {
@@ -126,67 +125,37 @@ function Homepage () {
 
                 <div className="projects">
 
-                    <Swiper className="projects-container mySwiper" modules={[Scrollbar]} scrollbar={{hide: false}} spaceBetween={40} slidesPerView={1}>
+                    <Swiper className="projects-container mySwiper" modules={[Scrollbar]} scrollbar={{hide: false}} spaceBetween={20} slidesPerView={1}>
 
-                        <SwiperSlide className="project" initial>
+                        {Projects.map(function(projectItem){
+                            return (
+                                <SwiperSlide className="project" key={projectItem.id}>
+                                    <Link to={`/projets/${projectItem.id}`}  className="project-image">
+                                        <img src={projectItem.image} alt="image du projet" />
+                                    </Link>
+                                    <div className="project-body">
+                                        <div className="project-tags">
+                                            {projectItem.stacks.map(function(stack){
+                                                return (
+                                                    <div key={stack} className="tags-div">
+                                                        {stack}
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                        <div className="project-name">{projectItem.name}</div>
+                                        <div className="project-desc">{projectItem.description}</div>
+                                        <Link to={`/projets/${projectItem.id}`}  className="project-action">
+                                            En savoir plus
+                                        </Link>
+                                    </div>
+                                </SwiperSlide>
+                            )
+                        })}
 
-                            <a href="#" className="project-image">
-                                <img src={maq3} alt="image du projet" />
-                            </a>
-                            <div className="project-body">
-                                <div className="project-tags">React, CSS</div>
-                                <div className="project-name">Stackr</div>
-                                <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                                <a href="#" className="project-action">
-                                    En savoir plus
-                                </a>
-                            </div>
-                        </SwiperSlide>
+                        
 
-                        <SwiperSlide className="project">
 
-                            <a href="#" className="project-image">
-                                <img src={maq4} alt="image du projet" />
-                            </a>
-                            <div className="project-body">
-                                <div className="project-tags">React, CSS</div>
-                                <div className="project-name">Stackr</div>
-                                <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                                <a href="#" className="project-action">
-                                    En savoir plus
-                                </a>
-                            </div>
-                        </SwiperSlide>
-
-                        <SwiperSlide className="project">
-
-                            <a href="#" className="project-image">
-                                <img src={maq5} alt="image du projet" />
-                            </a>
-                            <div className="project-body">
-                                <div className="project-tags">React, CSS</div>
-                                <div className="project-name">Stackr</div>
-                                <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                                <a href="#" className="project-action">
-                                    En savoir plus
-                                </a>
-                            </div>
-                        </SwiperSlide>
-
-                        <SwiperSlide className="project">
-
-                            <a href="#" className="project-image">
-                                <img src={maq4} alt="image du projet" />
-                            </a>
-                            <div className="project-body">
-                                <div className="project-tags">React, CSS</div>
-                                <div className="project-name">Stackr</div>
-                                <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                                <a href="#" className="project-action">
-                                    En savoir plus
-                                </a>
-                            </div>
-                        </SwiperSlide>
                     </Swiper>
                 </div>
             </div>

@@ -323,6 +323,9 @@
                             font-size: 15px;
                             font-weight: 700px;
                             text-transform: uppercase;
+                            display: flex;
+                            gap: 5px;
+                            align-items: center;
                         }
 
                         .project-name {

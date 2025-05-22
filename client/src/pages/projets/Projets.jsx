@@ -1,15 +1,12 @@
 import React from "react"
 import "./projets.scss"
-import maq3 from "../../../public/images/maq3.jpg"
-import maq4 from "../../../public/images/maq4.jpg"
-import maq5 from "../../../public/images/maq5.jpg"
-import maq6 from "../../../public/images/maq6.jpg"
-import maq7 from "../../../public/images/maq7.jpg"
 import {motion} from "framer-motion"
 import github from "../../../public/images/github.png"
 import phone from "../../../public/images/phone.png"
 import whatsapp from "../../../public/images/whatsapp.png"
 import { SlideUp, SliderLeft, SliderBottom, SliderRight } from "../../utils/animation"
+import { Projects } from "../../utils/dummyData"
+import {Link} from "react-router-dom"
 
 function Projets () {
     return (
@@ -24,93 +21,36 @@ function Projets () {
                 
                 <motion.div className="projects-container" variants={SlideUp(0.6)} initial="hidden" whileInView="visible">
 
-                    <div className="project">
-                        <a href="#" className="project-image">
-                            <img src={maq6} alt="image du projet" />
-                        </a>
-                        <div className="project-body">
-                            <div className="project-tags">React, CSS</div>
-                            <div className="project-name">Stackr</div>
-                            <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                            <a href="#" className="project-action">
-                                En savoir plus
-                            </a>
-                        </div>
-                    </div>
-
-                     <div className="project">
-                        <a href="#" className="project-image">
-                            <img src={maq7} alt="image du projet" />
-                        </a>
-                        <div className="project-body">
-                            <div className="project-tags">React, CSS</div>
-                            <div className="project-name">Stackr</div>
-                            <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                            <a href="#" className="project-action">
-                                En savoir plus
-                            </a>
-                        </div>
-                    </div>
-
-                     <div className="project">
-                        <a href="#" className="project-image">
-                            <img src={maq4} alt="image du projet" />
-                        </a>
-                        <div className="project-body">
-                            <div className="project-tags">React, CSS</div>
-                            <div className="project-name">Stackr</div>
-                            <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                            <a href="#" className="project-action">
-                                En savoir plus
-                            </a>
-                        </div>
-                    </div>
-
-                     <div className="project">
-                        <a href="#" className="project-image">
-                            <img src={maq4} alt="image du projet" />
-                        </a>
-                        <div className="project-body">
-                            <div className="project-tags">React, CSS</div>
-                            <div className="project-name">Stackr</div>
-                            <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                            <a href="#" className="project-action">
-                                En savoir plus
-                            </a>
-                        </div>
-                    </div>
-
-                    <div className="project">
-                        <a href="#" className="project-image">
-                            <img src={maq3} alt="image du projet" />
-                        </a>
-                        <div className="project-body">
-                            <div className="project-tags">React, CSS</div>
-                            <div className="project-name">Stackr</div>
-                            <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                            <a href="#" className="project-action">
-                                En savoir plus
-                            </a>
-                        </div>
-                        
-                    </div>
-
-                     <div className="project">
-                        <a href="#" className="project-image">
-                            <img src={maq5} alt="image du projet" />
-                        </a>
-                        <div className="project-body">
-                            <div className="project-tags">React, CSS</div>
-                            <div className="project-name">Stackr</div>
-                            <div className="project-desc">Création d'une librairie de composants et refonte du dashboard Strackr</div>
-                            <a href="#" className="project-action">
-                                En savoir plus
-                            </a>
-                        </div>
-                    </div>
+                    {Projects.map(function(projectItem){
+                        return (
+                            <div className="project" key={projectItem.id}>
+                                <Link to={`/projets/${projectItem.id}`} className="project-image">
+                                    <img src={projectItem.image} alt="image du projet" />
+                                </Link>
+                                <div className="project-body">
+                                    <div className="project-tags">
+                                        {projectItem.stacks.map(function(stack){
+                                            return (
+                                                <div key={stack} className="tags-div">
+                                                    {stack}
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                    <div className="project-name">{projectItem.name}</div>
+                                    <div className="project-desc">{projectItem.description}</div>
+                                    <Link to={`/projets/${projectItem.id}`} className="project-action">
+                                        En savoir plus
+                                    </Link>
+                                </div>
+                            </div>
+                        )
+                    })}
 
                 </motion.div>
             </div>
+
+
 
             <div className="section-social">
                 

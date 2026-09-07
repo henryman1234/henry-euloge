@@ -1,20 +1,20 @@
-import mongoose from "mongoose";
-import  dns from "node:dns"
+// import mongoose from "mongoose";
+// import  dns from "node:dns"
 
 
-export async function connectDB () {
+// export async function connectDB () {
 
-    const uri = process.env.MONGO_URI;
+//     const uri = process.env.MONGO_URI;
 
-    if (!uri) throw new Error("There is not a connection's string")
+//     if (!uri) throw new Error("There is not a connection's string")
 
-    try {
-        await mongoose.connect(uri?.trim(), {dbName: "henry-portfolio"})
+//     try {
+//         await mongoose.connect(uri?.trim(), {dbName: "henry-portfolio"})
 
-        console.log("Successfully connected to Mongo DB")
+//         console.log("Successfully connected to Mongo DB")
         
-    } catch (error) {
-        console.error("Connection to mongodb failed!: ", error)
-        process.exit(1)
-    }
-}
+//     } catch (error) {
+//         console.error("Connection to mongodb failed!: ", error)
+//         process.exit(1)
+//     }
+// }

@@ -2,7 +2,6 @@ import express from "express"
 import cors from "cors"
 import http from "node:http"
 import dotenv from "dotenv"
-import { connectDB } from "./utils/db.js"
 import { error } from "node:console"
 import projectsRoute from "./routes/projects.js"
 import emailsRouter from "./routes/emails.js"
@@ -16,6 +15,7 @@ const httpServer = http.createServer(app)
 const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:5174",
+    "https://henry-euloge.vercel.app"
 ]
 
 const corsOptions = {
@@ -53,10 +53,14 @@ app.use((err, req, res, next) => {
     next()
 })
 
+app.get("/", async (req, res) => {
+    res.send("Ceci est la route d'accueil du serveur")
+})
+
 const port = process.env.PORT || 3000
 
 try {
-    await connectDB();
+    // await connectDB();
 
     httpServer.listen(port, () => {
         console.log(`Server is running on port ${port}`)

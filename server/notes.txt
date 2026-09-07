@@ -1,0 +1,213 @@
+hfgygfuhuhfuhfuhfuhufhfuh
+export const testControllers = async (req, res) => {
+    try {
+        // A. Récupération des données depuis MongoDB
+        const nodes = await getAllNodes().populate('pattern');
+        const links = await fetchPipes();
+        const patterns = await Pattern.find().lean();
+  
+        // B. Génération du fichier .inp en texte
+        const inpContent = generateInpFile(nodes, links, patterns);
+  
+        // C. Chargement dans EPANET
+        const model = await EPANET(); // Initialise le moteur
+        model.writeInputFile(inpContent); // Charge le texte dans le moteur
+        model.open(); // Ouvre le réseau
+        model.solveH(); // C'est ICI que le calcul des pressions/débits se fait
+  
+        // D. Extraction des résultats
+        const results = {
+            nodes: [],
+            links: []
+        };
+  
+        // Extraire la pression de chaque nœud
+        nodes.forEach((n, index) => {
+            // index + 1 car EPANET utilise des index commençant à 1
+            const pressure = model.getNodeValue(index + 1, 'Pressure');
+            results.nodes.push({ name: n.name, pressure: pressure });
+        });
+  
+        // Extraire le débit de chaque conduite
+        links.forEach((l, index) => {
+            const flow = model.getLinkValue(index + 1, 'Flow');
+            results.links.push({ name: l.name, flow: flow });
+        });
+  
+        // E. Fermeture et envoi
+        model.close();
+        res.status(200).json(results);
+  
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+  };
+
+
+import { detectGreatVelocity } from "../utils/detectGreatVelocity.js";
+import { detectLowPressures } from "../utils/detectLowPressures.js";
+import { detectLowVelocity } from "../utils/detectLowVelocity.js";
+import { detectNegativePressures } from "../utils/detectNegativePressures.js";
+import { runSimulations } from "../utils/hydraulicServiceScenario.js";
+import { getAllNodes } from "./nodesController.js";
+import { fetchPipes } from "./pipesController.js";
+
+export const scenarioResultsController = async function (req, res) {
+
+    try {
+
+        const {
+            hour,
+            pipes: modifiedPipes = []
+        } = req.body;
+
+        const requestedHour = Number(hour);
+
+        /**
+         * Chargement du réseau
+         */
+        const nodes = await getAllNodes();
+        const pipes = await fetchPipes();
+
+        /**
+         * Création d'une copie temporaire des conduites
+         */
+        const scenarioPipes = pipes.map((pipe) => {
+
+            const modifiedPipe = modifiedPipes.find(
+                (p) => String(p._id) === String(pipe._id)
+            );
+
+            if (!modifiedPipe) {
+                return pipe;
+            }
+
+            return {
+                ...pipe,
+
+                diameter:
+                    modifiedPipe.diameter ?? pipe.diameter,
+
+                length:
+                    modifiedPipe.length ?? pipe.length,
+
+                roughness:
+                    modifiedPipe.roughness ?? pipe.roughness
+            };
+
+        });
+
+        /**
+         * Lancement de la simulation
+         */
+        const simulationData = await runSimulations(
+            nodes,
+            scenarioPipes
+        );
+
+        /**
+         * Snapshot demandé
+         */
+        const snapshot = simulationData.data.times.find(
+            (time) =>
+                Math.floor(time.Heure) === requestedHour
+        );
+
+        if (!snapshot) {
+
+            return res.status(404).json({
+                success: false,
+                message: `Aucun snapshot trouvé pour ${requestedHour}h`
+            });
+
+        }
+
+        /**
+         * Transformation des résultats
+         */
+        const nodesArray = Object.entries(snapshot.nodes).map(
+            ([_id, data]) => ({
+                ...data,
+                _id
+            })
+        );
+
+        const pipesArray = Object.entries(snapshot.links).map(
+            ([_id, data]) => ({
+                ...data,
+                _id
+            })
+        );
+
+        /**
+         * Détection des anomalies
+         */
+        const negativePressures =
+            await detectNegativePressures(nodesArray);
+
+        const lowPressures =
+            await detectLowPressures(nodesArray);
+
+        const lowVelocity =
+            await detectLowVelocity(pipesArray);
+
+        const greatVelocity =
+            await detectGreatVelocity(pipesArray);
+
+        /**
+         * Réponse
+         */
+        return res.status(200).json({
+
+            success: true,
+
+            hour: requestedHour,
+
+            data: snapshot,
+
+            warnings: {
+
+                hasIssue:
+                    negativePressures.length > 0 ||
+                    lowPressures.length > 0 ||
+                    lowVelocity.length > 0 ||
+                    greatVelocity.length > 0,
+
+                pressures: {
+
+                    negative: negativePressures,
+
+                    low: lowPressures
+
+                },
+
+                velocities: {
+
+                    low: lowVelocity,
+
+                    great: greatVelocity
+
+                }
+
+            }
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+
+            success: false,
+
+            message:
+                "Erreur lors de la simulation du scénario."
+
+        });
+
+    }
+
+};

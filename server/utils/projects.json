@@ -1,0 +1,196 @@
+[
+    {
+        "id": 1,
+        "name" : "Infinity Group",
+        "next" : "KingTech cie",
+        "description":  "conception du site vitrine de  l'entreprise Infinity",
+        "technologies" : ["react", "scss"],
+        "goal": "L'objectif du projet est de travailler sur une proposition de version pour l'entreprise de communication Infinity",
+        "url": "https://infinity-studios.vercel.app/",
+        "cover": "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+
+
+        "block_one": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/services.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        },
+
+        "block_two": [
+            "https://ik.imagekit.io/6lfozi2av/services.PNG",
+            "https://ik.imagekit.io/6lfozi2av/dg.PNG",
+            "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+            "https://ik.imagekit.io/6lfozi2av/contacts.PNG"
+        ],
+
+        "block_three": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/dg.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        },
+
+
+        "block_four": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        }
+        
+        
+    },
+    {
+        "id": 2,
+        "name" : "KingTech cie",
+        "prev": "Infinity Group",
+        "next": "Projet café",
+        "description":  "conception du site vitrine de  l'entreprise Infinity",
+        "technologies" : ["react", "scss"],
+        "goal": "L'objectif du projet est de travailler sur une proposition de version pour l'entreprise de communication Infinity",
+        "url": "https://infinity-studios.vercel.app/",
+        "cover": "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+
+
+        "block_one": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/services.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        },
+
+        "block_two": [
+            "https://ik.imagekit.io/6lfozi2av/services.PNG",
+            "https://ik.imagekit.io/6lfozi2av/dg.PNG",
+            "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+            "https://ik.imagekit.io/6lfozi2av/contacts.PNG"
+        ],
+
+        "block_three": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/dg.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        },
+
+
+        "block_four": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        }
+        
+        
+    },
+    {
+        "id": 3,
+        "name" : "Projet café",
+        "prev" : "KingTech cie",
+        "next": "Projet supermarché",
+        "description":  "conception du site vitrine de  l'entreprise Infinity",
+        "technologies" : ["react", "scss"],
+        "goal": "L'objectif du projet est de travailler sur une proposition de version pour l'entreprise de communication Infinity",
+        "url": "https://infinity-studios.vercel.app/",
+        "cover": "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+
+
+        "block_one": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/services.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        },
+
+        "block_two": [
+            "https://ik.imagekit.io/6lfozi2av/services.PNG",
+            "https://ik.imagekit.io/6lfozi2av/dg.PNG",
+            "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+            "https://ik.imagekit.io/6lfozi2av/contacts.PNG"
+        ],
+
+        "block_three": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/dg.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        },
+
+
+        "block_four": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        }
+        
+        
+    },
+    {
+        "id": 4,
+        "name" : "Projet supermarché",
+        "prev" : "Projet café",
+        "description":  "conception du site vitrine de  l'entreprise Infinity",
+        "technologies" : ["react", "scss"],
+        "goal": "L'objectif du projet est de travailler sur une proposition de version pour l'entreprise de communication Infinity",
+        "url": "https://infinity-studios.vercel.app/",
+        "cover": "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+
+
+        "block_one": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/services.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        },
+
+        "block_two": [
+            "https://ik.imagekit.io/6lfozi2av/services.PNG",
+            "https://ik.imagekit.io/6lfozi2av/dg.PNG",
+            "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+            "https://ik.imagekit.io/6lfozi2av/contacts.PNG"
+        ],
+
+        "block_three": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/dg.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        },
+
+
+        "block_four": {
+            "title": "Création d'un design system",
+            "img": "https://ik.imagekit.io/6lfozi2av/services2.PNG",
+            "para_one": "Afin de préparer le redesign la première étape a été de créer une librairie de composants à partir d'un design créé avec Figma. Pour présenter les composant dans un environnement isolé j'ai choisi d'utiliser",
+            "para_two": "Pour organiser la grande quantité de composants, j'ai utilisé le principe sur les composants en 3 grandes catégories:",
+            "para_three": "Au-delà de la création des différents panneaux nécessaires à l'utilisation de l'application, l'objectif était de mettre en place une base de travail solide qui puisse être utilisée pour créer les futures fonctionnalités nécessaires à Probo.",
+            "para_four": "Cette organisation permet de s'y retrouver plus facilement dans la centaine de composants utilisés dans l'application."            
+        }
+        
+        
+    }
+]

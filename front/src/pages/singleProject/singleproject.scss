@@ -13,10 +13,33 @@
         background-attachment: fixed;
         padding-right: 20px;
         padding-left: 20px;
+        position: relative;
             
         @include responsive.large {
             padding-right: calc(50vw - 570px);
             padding-left: calc(50vw - 570px);
+        }
+
+        .back {
+            display: flex;
+            position: absolute;
+            top: 50px;
+            align-items: center;
+            font-family: Centra, sans-serif;
+            padding: 10px 20px;
+            background-color:#cd4728;
+            
+
+            .icon {
+                color: white;
+                font-weight: bold;
+            }
+            span {
+                font-size: 16px;
+                margin-right: 3px;
+                font-weight: 300;
+                color: white;
+            }
         }
 
         .page-title {
@@ -88,6 +111,7 @@
                     text-decoration: none;
                     text-transform: uppercase;
                     white-space: nowrap;
+                    border-radius: 0;
 
                     &:hover {
                         transition: 0.32s ease all;

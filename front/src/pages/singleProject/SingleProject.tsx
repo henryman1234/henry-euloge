@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useDebugValue} from "react"
 import "./singleproject.scss"
-import { Link, useLocation, useParams } from "react-router-dom"
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom"
 import { SlideUp, SliderBottom, SliderLeft, SliderRight } from "../../utils/animation"
 import {motion} from "framer-motion"
 import OptimizedImage from "../../utils/OptimizedImage"
 import type { Project } from "../../utils/types"
+import {ArrowLeft, ArrowRightLeft, User} from "lucide-react"
 
 const SingleProject = function () {
 
@@ -24,6 +25,7 @@ const SingleProject = function () {
     const apiUrl = import.meta.env.VITE_API_URL;
     const prev = Number(id)  - 1
     const next = Number(id)  +  1;
+    const navigate = useNavigate();
     
     useEffect(() => {
 
@@ -40,7 +42,6 @@ const SingleProject = function () {
                 if (res.ok) {
                     const data = await res.json()
                     setProject(data);
-                    console.log("Données d'un projet: ", data)
                 }
 
             } catch (err) {
@@ -63,6 +64,21 @@ const SingleProject = function () {
         <main className="singleProject">
 
             <div className="page-header">
+
+                {/* Bouton retour */}
+                <motion.div 
+                    className="back"
+                    onClick={() => navigate(-1)}
+                    initial={{opacity: 0,  y: 60}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.5, ease: "easeIn"}}
+                    >
+                        <ArrowLeft  className="icon"/>
+                        <span>Retour</span>
+                </motion.div> 
+
+
                 <motion.div 
                     className="page-title"
                     initial={{opacity: 0,  y: 60}}
@@ -83,6 +99,8 @@ const SingleProject = function () {
                     {project?.description}
                 </motion.div>
             </div>
+
+
 
 
             <motion.div  

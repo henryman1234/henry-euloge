@@ -3,16 +3,19 @@ import "./projets.scss"
 import {motion} from "framer-motion"
 import { SlideUp, SliderLeft, SliderBottom, SliderRight } from "../../utils/animation"
 import { Projects } from "../../utils/dummyData"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import ProjectCard from "../../components/projectCard/ProjectCard"
 import type { Project } from "../../utils/types"
+import { ArrowLeft } from "lucide-react"
 
 function Projets () {
+
 
     const [projects, setProjects] = useState<Project[] | null>(null);
     // Etat du chargement
     const [isLoading, setIsLoading] = useState(true)
     const apiUrl = import.meta.env.VITE_API_URL;
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -53,6 +56,21 @@ function Projets () {
         <div className="projets">
 
             <div className="page-header">
+
+                {/* Bouton retour */}
+                <motion.div 
+                    className="back"
+                    onClick={() => navigate(-1)}
+                    initial={{opacity: 0,  y: 60}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.5, ease: "easeIn"}}
+                >
+                    <ArrowLeft className="icon"/>
+                    <span>Retour</span>
+                </motion.div> 
+
+
                 <motion.div  
                     className="page-title"
                     initial={{opacity: 0,  y: 60}}
@@ -62,13 +80,19 @@ function Projets () {
                 >
                     Mes réalisations
                 </motion.div>
+
+                
                 <motion.div  
                     className="page-subtitle"
                     initial={{opacity: 0,  y: 60}}
                     whileInView={{opacity: 1, y: 0}}
                     viewport={{once: true}}
                     transition={{duration: 0.5, ease: "easeIn"}}
-                >Voici un éventail de quelques des projets sur lesquels je suis intervenus.</motion.div>
+                >Voici un éventail de quelques des projets sur lesquels je suis intervenus.
+                
+                </motion.div>
+
+
             </div>
             
             <motion.div 
@@ -95,12 +119,18 @@ function Projets () {
 
 
 
-            <div className="section-social">
+            <motion.div 
+                className="section-social"
+                initial={{opacity: 0,  y: 60}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true}}
+                transition={{duration: 0.5, ease: "easeIn"}}
+            >
                 
-                <motion.div variants={SliderLeft(0.3)} whileInView="visible"  initial="hidden"  className="section-top-title">réseaux sociaux</motion.div>
-                <motion.div variants={SliderLeft(0.5)} whileInView="visible"  initial="hidden"    className="section-title">Me retrouver</motion.div>
+                <motion.div   className="section-top-title">réseaux sociaux</motion.div>
+                <motion.div     className="section-title">Me retrouver</motion.div>
 
-                <motion.div className="social-links" variants={SliderRight(0.3)} initial="hidden" whileInView="visible">
+                <motion.div className="social-links" >
 
                     <a href="https://wa.me/237658055913" target="_blank">
                             <strong>Whatsapp</strong>
@@ -122,7 +152,7 @@ function Projets () {
 
                 </motion.div>
 
-            </div>
+            </motion.div>
 
             <div className="section-footer">
                 Intégration et developpement par <a href="/">Henry</a>

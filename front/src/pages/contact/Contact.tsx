@@ -46,8 +46,8 @@ function Contact () {
             
             <div className="contact-page">
 
-                <div className="page-header">
-                </div>
+                {/* <div className="page-header">
+                </div> */}
 
                 <motion.div 
                     className="section" 

@@ -8,7 +8,6 @@ import SingleProject from "./pages/singleProject/SingleProject"
 import {Toaster} from "sonner"
 
 function App () {
-
   const router = createBrowserRouter([
     {
       path: "/",

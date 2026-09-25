@@ -5,7 +5,7 @@ import { SlideUp, SliderBottom, SliderLeft, SliderRight } from "../../utils/anim
 import {motion} from "framer-motion"
 import OptimizedImage from "../../utils/OptimizedImage"
 import type { Project } from "../../utils/types"
-import {ArrowLeft, ArrowRightLeft, User} from "lucide-react"
+import {ArrowLeft, ArrowRightLeft, Loader, User} from "lucide-react"
 
 const SingleProject = function () {
 
@@ -27,7 +27,16 @@ const SingleProject = function () {
     const next = Number(id)  +  1;
     const navigate = useNavigate();
     const location = useLocation()
-    const previousUrl = location.state?.from || "/"
+    console.log("location", location)
+
+    const handleClick = () => {
+        
+        if (location.key !== "default") {
+            navigate(-1)
+        }else {
+            navigate("/")
+        }
+    }
 
 
     
@@ -72,7 +81,7 @@ const SingleProject = function () {
                 {/* Bouton retour */}
                 <motion.div 
                     className="back"
-                    onClick={() => navigate(-1 || "/")}
+                    onClick={handleClick}
                     initial={{opacity: 0,  y: 60}}
                     whileInView={{opacity: 1, y: 0}}
                     viewport={{once: true}}

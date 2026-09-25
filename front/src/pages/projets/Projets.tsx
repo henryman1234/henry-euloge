@@ -3,7 +3,7 @@ import "./projets.scss"
 import {motion} from "framer-motion"
 import { SlideUp, SliderLeft, SliderBottom, SliderRight } from "../../utils/animation"
 import { Projects } from "../../utils/dummyData"
-import {Link, useNavigate} from "react-router-dom"
+import {Link, useLocation, useNavigate} from "react-router-dom"
 import ProjectCard from "../../components/projectCard/ProjectCard"
 import type { Project } from "../../utils/types"
 import { ArrowLeft } from "lucide-react"
@@ -15,7 +15,17 @@ function Projets () {
     // Etat du chargement
     const [isLoading, setIsLoading] = useState(true)
     const apiUrl = import.meta.env.VITE_API_URL;
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const location = useLocation();
+
+    const handleClick = () => {
+        
+        if (location.key !== "default") {
+            navigate(-1)
+        }else {
+            navigate("/")
+        }
+    }
 
     useEffect(() => {
 
@@ -59,7 +69,7 @@ function Projets () {
                 {/* Bouton retour */}
                 <motion.div 
                     className="back"
-                    onClick={() => navigate(-1 || "/")}
+                    onClick={handleClick}
                     initial={{opacity: 0,  y: 60}}
                     whileInView={{opacity: 1, y: 0}}
                     viewport={{once: true}}

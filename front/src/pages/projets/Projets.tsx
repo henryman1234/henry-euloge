@@ -31,7 +31,6 @@ function Projets () {
 
                 if (res.ok) {
                     const data = await res.json()
-                    console.log("Données renvoyées: ", data)
                     setProjects(data)
                     setIsLoading(false)
                 }
@@ -60,7 +59,7 @@ function Projets () {
                 {/* Bouton retour */}
                 <motion.div 
                     className="back"
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate(-1 || "/")}
                     initial={{opacity: 0,  y: 60}}
                     whileInView={{opacity: 1, y: 0}}
                     viewport={{once: true}}

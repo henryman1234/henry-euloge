@@ -26,6 +26,10 @@ const SingleProject = function () {
     const prev = Number(id)  - 1
     const next = Number(id)  +  1;
     const navigate = useNavigate();
+    const location = useLocation()
+    const previousUrl = location.state?.from || "/"
+
+
     
     useEffect(() => {
 
@@ -68,7 +72,7 @@ const SingleProject = function () {
                 {/* Bouton retour */}
                 <motion.div 
                     className="back"
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate(-1 || "/")}
                     initial={{opacity: 0,  y: 60}}
                     whileInView={{opacity: 1, y: 0}}
                     viewport={{once: true}}
